@@ -33,7 +33,6 @@ int instruction_decode(unsigned op,struct_controls *controls)
 }
 
 /* Read Register */
-/* Code by Robert Pietrzak */
 void read_register(unsigned r1,unsigned r2,unsigned *Reg,unsigned *data1,unsigned *data2)
 {
     // Transcribe the contents of reg[r1] and reg[r2] into data1 and data2
