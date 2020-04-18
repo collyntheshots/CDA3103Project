@@ -68,26 +68,34 @@ int ALU_operations(unsigned data1,unsigned data2,unsigned extended_value,unsigne
     
     if(ALUOp == 7)
     {
+        //Addition
         if(funct == 32)
             ALUOp = 0;
+        //Subtraction
         else if(funct == 34)
             ALUOp = 1;
+        //Signed comparison
         else if(funct == 42)
             ALUOp = 2;
+        //Unsigned comparison
         else if(funct == 43)
             ALUOp = 3;
+        //AND
         else if(funct == 36)
             ALUOp = 4;
+        //OR
         else if(funct == 37)
             ALUOp = 5;
+        //Shift bits left
         else if(funct == 4)
             ALUOp = 6;
         else
             return 1;
     }
+    //If ALUSrc is equal to one, set data2 equal to the extended value
     if(ALUSrc == 1)
         data2 = extended_value;
-    
+    //Run ALU
     ALU(data1, data2, ALUControl, ALUresult, Zero)
     return 0;
 }
