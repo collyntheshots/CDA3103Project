@@ -64,7 +64,33 @@ void sign_extend(unsigned offset,unsigned *extended_value)
 /* 10 Points */
 int ALU_operations(unsigned data1,unsigned data2,unsigned extended_value,unsigned funct,char ALUOp,char ALUSrc,unsigned *ALUresult,char *Zero)
 {
-
+    if(ALUOp < 0 || ALUOp > 7)
+        return 1;
+    
+    if(ALUOp == 7)
+    {
+        if(funct == 32)
+            ALUOp = 0;
+        else if(funct == 34)
+            ALUOp = 1;
+        else if(funct == 42)
+            ALUOp = 2;
+        else if(funct == 43)
+            ALUOp = 3;
+        else if(funct == 36)
+            ALUOp = 4;
+        else if(funct == 37)
+            ALUOp = 5;
+        else if(funct == 4)
+            ALUOp = 6;
+        else
+            return 1;
+    }
+    if(ALUSrc == 1)
+        data2 = extended_value;
+    
+    ALU(data1, data2, ALUControl, ALUresult, Zero)
+    return 0;
 }
 
 /* Read / Write Memory */
