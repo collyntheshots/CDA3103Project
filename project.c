@@ -96,7 +96,7 @@ int ALU_operations(unsigned data1,unsigned data2,unsigned extended_value,unsigne
     if(ALUSrc == 1)
         data2 = extended_value;
     //Run ALU
-    ALU(data1, data2, ALUControl, ALUresult, Zero)
+    ALU(data1, data2, ALUOp, ALUresult, Zero)
     return 0;
 }
 
