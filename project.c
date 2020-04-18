@@ -69,25 +69,25 @@ int ALU_operations(unsigned data1,unsigned data2,unsigned extended_value,unsigne
     if(ALUOp == 7)
     {
         //Addition
-        if(funct == 32)
+        if(funct == 0x20)
             ALUOp = 0;
         //Subtraction
-        else if(funct == 34)
+        else if(funct == 0x22)
             ALUOp = 1;
         //Signed comparison
-        else if(funct == 42)
+        else if(funct == 0x2a)
             ALUOp = 2;
         //Unsigned comparison
-        else if(funct == 43)
+        else if(funct == 0x2b)
             ALUOp = 3;
         //AND
-        else if(funct == 36)
+        else if(funct == 0x24)
             ALUOp = 4;
         //OR
-        else if(funct == 37)
+        else if(funct == 0x25)
             ALUOp = 5;
         //Shift bits left
-        else if(funct == 4)
+        else if(funct == 0x00)
             ALUOp = 6;
         else
             return 1;
