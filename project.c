@@ -65,7 +65,7 @@ int ALU_operations(unsigned data1,unsigned data2,unsigned extended_value,unsigne
 {
     if(ALUOp < 0 || ALUOp > 7)
         return 1;
-    
+    //If the operation number is 7, then it is an R type instruction.
     if(ALUOp == 7)
     {
         //Addition
